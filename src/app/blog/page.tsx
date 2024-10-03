@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calendar, User, Music } from "lucide-react"
+import Footer from '@/components/Footer'
 
 const blogPosts = [
   {
@@ -36,6 +37,7 @@ const blogPosts = [
 
 export default function BlogPage() {
   return (
+    <div className="flex flex-col min-h-screen">
     <div className="flex flex-col min-h-screen">
       <header className="flex items-center justify-between px-6 py-4 bg-background border-b">
         <div className="flex items-center space-x-4">
@@ -80,5 +82,7 @@ export default function BlogPage() {
         ))}
       </div>
     </div></div>
+    <Footer/>
+    </div>
   )
 }

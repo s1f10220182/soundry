@@ -45,7 +45,7 @@ export default function CoursesPage() {
               </CardContent>
               <CardFooter>
                 <Button className="w-full" asChild>
-                  <Link href={`/courses/${course.slug}`}>コースの詳細</Link>
+                <Link href={`/courses/${course.slug}`}>コースの詳細</Link>
                 </Button>
               </CardFooter>
             </Card>

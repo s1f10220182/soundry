@@ -1,223 +1,254 @@
-// import Image from "next/image";
-
-// export default function Home() {
-//   return (
-//     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-//       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-//         <Image
-//           className="dark:invert"
-//           src="https://nextjs.org/icons/next.svg"
-//           alt="Next.js logo"
-//           width={180}
-//           height={38}
-//           priority
-//         />
-//         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-//           <li className="mb-2">
-//             Get started by editing{" "}
-//             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-//               src/app/page.tsx
-//             </code>
-//             .
-//           </li>
-//           <li>Save and see your changes instantly.</li>
-//         </ol>
-
-//         <div className="flex gap-4 items-center flex-col sm:flex-row">
-//           <a
-//             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-//             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             <Image
-//               className="dark:invert"
-//               src="https://nextjs.org/icons/vercel.svg"
-//               alt="Vercel logomark"
-//               width={20}
-//               height={20}
-//             />
-//             Deploy now
-//           </a>
-//           <a
-//             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-//             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Read our docs
-//           </a>
-//         </div>
-//       </main>
-//       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-//         <a
-//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-//           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <Image
-//             aria-hidden
-//             src="https://nextjs.org/icons/file.svg"
-//             alt="File icon"
-//             width={16}
-//             height={16}
-//           />
-//           Learn
-//         </a>
-//         <a
-//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-//           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <Image
-//             aria-hidden
-//             src="https://nextjs.org/icons/window.svg"
-//             alt="Window icon"
-//             width={16}
-//             height={16}
-//           />
-//           Examples
-//         </a>
-//         <a
-//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-//           href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           <Image
-//             aria-hidden
-//             src="https://nextjs.org/icons/globe.svg"
-//             alt="Globe icon"
-//             width={16}
-//             height={16}
-//           />
-//           Go to nextjs.org →
-//         </a>
-//       </footer>
-//     </div>
-//   );
-// }
-
-
-// import PreviewComponent from '@/components/PreviewComponent'
-
-// export default function Home() {
-//   return <PreviewComponent />
-// }
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Search,  Mic2, BookOpen, Users } from "lucide-react"
 import Link from 'next/link'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
+import { Star, ChevronRight, Music, Code, Briefcase, Palette } from "lucide-react"
 
 export default function HomePage() {
-  // あなたが提供したホームページのコードをここに貼り付けます
   return (
     <div className="flex flex-col min-h-screen">
-      <Header/>
-
+      <Header />
       <main className="flex-grow">
-        <section className="py-20 px-6 bg-gradient-to-r from-primary/20 to-secondary/20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-4">音楽の世界へようこそ</h2>
-            <p className="text-xl mb-8">プロの講師陣による高品質なオンライン音楽レッスンで、あなたの音楽スキルを磨きましょう。</p>
-            <div className="flex justify-center">
-              <Input className="w-64 mr-2" placeholder="学びたい楽器や技術は？" />
-              <Button>
-                <Search className="mr-2 h-4 w-4" /> 検索
+        {/* ヒーローセクション */}
+        <section className="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-20">
+          <div className="container mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">音楽の世界へようこそ</h1>
+            <p className="text-xl md:text-2xl mb-8">Soundryで才能を解き放ち、音楽の旅を始めましょう</p>
+            <Button size="lg" asChild>
+              <Link href="/courses">コースを探す</Link>
+            </Button>
+          </div>
+        </section>
+
+        {/* 人気コース */}
+        <section className="py-16 bg-gray-100">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">人気のコース</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { title: "ギター入門", instructor: "山田太郎", price: "¥5,000", image: "/placeholder.svg?height=200&width=300" },
+                { title: "作曲マスター", instructor: "佐藤花子", price: "¥8,000", image: "/placeholder.svg?height=200&width=300" },
+                { title: "ボーカルテクニック", instructor: "鈴木一郎", price: "¥6,500", image: "/placeholder.svg?height=200&width=300" },
+              ].map((course, index) => (
+                <Card key={index}>
+                  <img src={course.image} alt={course.title} className="w-full h-40 object-cover" />
+                  <CardHeader>
+                    <CardTitle>{course.title}</CardTitle>
+                    <CardDescription>{course.instructor}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center">
+                      <Star className="text-yellow-400 mr-1" />
+                      <Star className="text-yellow-400 mr-1" />
+                      <Star className="text-yellow-400 mr-1" />
+                      <Star className="text-yellow-400 mr-1" />
+                      <Star className="text-yellow-400 mr-1" />
+                      <span className="ml-2 text-sm text-gray-600">(150)</span>
+                    </div>
+                  </CardContent>
+                  <CardFooter className="flex justify-between items-center">
+                    <span className="font-bold">{course.price}</span>
+                    <Button variant="outline">詳細を見る</Button>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+            <div className="text-center mt-8">
+              <Button variant="outline" asChild>
+                <Link href="/courses">すべてのコースを見る <ChevronRight className="ml-2 h-4 w-4" /></Link>
               </Button>
             </div>
           </div>
         </section>
 
-        <section className="py-16 px-6">
-          <h3 className="text-2xl font-bold mb-8 text-center">人気のコース</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {['ギター入門', 'ボーカルテクニック', 'ピアノマスター'].map((course, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle>{course}</CardTitle>
-                  <CardDescription>初心者から上級者まで</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <img src={`/placeholder.svg?height=200&width=400`} alt={course} className="rounded-md mb-4" />
-                  <p className="text-sm text-muted-foreground">20レッスン・10時間の動画</p>
-                </CardContent>
-                <CardFooter>
-                  <Button className="w-full">コースの詳細</Button>
-                </CardFooter>
-              </Card>
-            ))}
+        {/* カテゴリー別コース */}
+        <section className="py-16">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">カテゴリー別コース</h2>
+            <Tabs defaultValue="instrument">
+              <TabsList className="grid w-full grid-cols-4">
+                <TabsTrigger value="instrument">楽器</TabsTrigger>
+                <TabsTrigger value="production">音楽制作</TabsTrigger>
+                <TabsTrigger value="theory">音楽理論</TabsTrigger>
+                <TabsTrigger value="business">音楽ビジネス</TabsTrigger>
+              </TabsList>
+              <TabsContent value="instrument">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {["ギター", "ピアノ", "ドラム", "ベース", "バイオリン", "サックス", "トランペット", "ウクレレ"].map((instrument, index) => (
+                    <Button variant="outline" key={index} className="h-24 text-lg">
+                      {instrument}
+                    </Button>
+                  ))}
+                </div>
+              </TabsContent>
+              <TabsContent value="production">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {["DAW基礎", "ミキシング", "マスタリング", "作曲", "編曲", "ボーカル録音", "シンセサイザー", "サンプリング"].map((topic, index) => (
+                    <Button variant="outline" key={index} className="h-24 text-lg">
+                      {topic}
+                    </Button>
+                  ))}
+                </div>
+              </TabsContent>
+              <TabsContent value="theory">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {["音楽理論基礎", "和声学", "対位法", "楽式論", "ソルフェージュ", "耳コピ", "即興演奏", "スコアリーディング"].map((topic, index) => (
+                    <Button variant="outline" key={index} className="h-24 text-lg">
+                      {topic}
+                    </Button>
+                  ))}
+                </div>
+              </TabsContent>
+              <TabsContent value="business">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {["音楽マーケティング", "著作権", "マネジメント", "ライブ企画", "レコーディング", "ディストリビューション", "ファンエンゲージメント", "音楽法務"].map((topic, index) => (
+                    <Button variant="outline" key={index} className="h-24 text-lg">
+                      {topic}
+                    </Button>
+                  ))}
+                </div>
+              </TabsContent>
+            </Tabs>
           </div>
         </section>
 
-        <section className="py-16 px-6 bg-muted">
-          <h3 className="text-2xl font-bold mb-8 text-center">Soundryの特徴</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              { icon: <Mic2 className="h-10 w-10" />, title: 'プロの講師陣', description: '業界で活躍する一流ミュージシャンから学べます' },
-              { icon: <BookOpen className="h-10 w-10" />, title: '豊富なコンテンツ', description: '初心者から上級者まで、幅広いレベルに対応' },
-              { icon: <Users className="h-10 w-10" />, title: 'コミュニティ', description: '同じ目標を持つ仲間と交流し、モチベーションを高めよう' },
-            ].map((feature, index) => (
-              <div key={index} className="flex flex-col items-center text-center">
-                {feature.icon}
-                <h4 className="text-xl font-semibold mt-4 mb-2">{feature.title}</h4>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </div>
-            ))}
+        {/* 講師紹介 */}
+        <section className="py-16 bg-gray-100">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">トップ講師陣</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {[
+                { name: "山田太郎", specialty: "ギター", image: "/placeholder.svg?height=100&width=100" },
+                { name: "佐藤花子", specialty: "ピアノ", image: "/placeholder.svg?height=100&width=100" },
+                { name: "鈴木一郎", specialty: "ドラム", image: "/placeholder.svg?height=100&width=100" },
+                { name: "高橋美咲", specialty: "ボーカル", image: "/placeholder.svg?height=100&width=100" },
+              ].map((instructor, index) => (
+                <Card key={index}>
+                  <CardHeader>
+                    <Avatar className="w-24 h-24 mx-auto">
+                      <AvatarImage src={instructor.image} alt={instructor.name} />
+                      <AvatarFallback>{instructor.name[0]}</AvatarFallback>
+                    </Avatar>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <h3 className="font-bold text-lg">{instructor.name}</h3>
+                    <p className="text-gray-600">{instructor.specialty}</p>
+                  </CardContent>
+                  <CardFooter className="justify-center">
+                    <Button variant="outline">プロフィールを見る</Button>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ユーザーレビュー */}
+        <section className="py-16">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">ユーザーの声</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { name: "田中さくら", course: "ギター入門", comment: "初心者でも分かりやすく、楽しく学べました！", rating: 5 },
+                { name: "佐々木健太", course: "作曲マスター", comment: "プロの技術が学べて、作曲スキルが格段に上がりました。", rating: 5 },
+                { name: "山本美香", course: "ボーカルテクニック", comment: "声の出し方から表現力まで、総合的に学べて良かったです。", rating: 4 },
+              ].map((review, index) => (
+                <Card key={index}>
+                  <CardHeader>
+                    <CardTitle>{review.name}</CardTitle>
+                    <CardDescription>{review.course}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p>"{review.comment}"</p>
+                    <div className="flex items-center mt-2">
+                      {Array.from({ length: review.rating }).map((_, i) => (
+                        <Star key={i} className="text-yellow-400 h-4 w-4" />
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* プラットフォームの特徴 */}
+        <section className="py-16 bg-gray-100">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">Soundryの特徴</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { icon: <Music className="h-12 w-12 mb-4" />, title: "幅広いジャンル", description: "クラシックからポップスまで、あらゆるジャンルの音楽を学べます。" },
+                { icon: <Code className="h-12 w-12 mb-4" />, title: "最新の学習技術", description: "AIを活用した個別学習プランで、効率的に上達できます。" },
+                { icon: <Briefcase className="h-12 w-12 mb-4" />, title: "プロの講師陣", description: "業界で活躍する一流のミュージシャンから直接学べます。" },
+                { icon: <Palette className="h-12 w-12 mb-4" />, title: "クリエイティブな環境", description: "他の受講生と交流し、刺激し合える環境が整っています。" },
+              ].map((feature, index) => (
+                <Card key={index}>
+                  <CardHeader>
+                    <div className="flex justify-center">{feature.icon}</div>
+                    <CardTitle className="text-center">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-center">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* よくある質問（FAQ） */}
+        <section className="py-16">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">よくある質問</h2>
+            <Accordion type="single" collapsible className="w-full max-w-2xl mx-auto">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>受講に必要な機材は何ですか？</AccordionTrigger>
+                <AccordionContent>
+                  基本的にはインターネット接続可能なデバイス（パソコン、タブレット、スマートフォンなど）があれば受講可能です。ただし、実技を伴うコースでは各楽器や録音機材が必要になる場合があります。詳細は各コースの説明をご確認ください。
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>コースの受講期限はありますか？</AccordionTrigger>
+                <AccordionContent>
+                  多くのコースに受講期限はありませんが、一部のライブセッションや期間限定コースには期限が設定されている場合があります。各コースの詳細ページでご確認いただけます。
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>返金ポリシーについて教えてください。</AccordionTrigger>
+                <AccordionContent>
+                  購入後14日以内かつコースの進捗が25%未満の場合、全額返金が可能です。ただし、一部のコースや特別プログラムには異なるポリシーが適用される場合があります。詳細は利用規約をご確認ください。
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4">
+                <AccordionTrigger>講師に直接質問することはできますか？</AccordionTrigger>
+                <AccordionContent>
+                  はい、可能です。各コースにはQ&Aセクションが用意されており、そこで講師に直接質問することができます。また、一部のコースではライブセッションやオフィスアワーも設けられています。
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </section>
+
+        {/* ニュースレター登録 */}
+        <section className="py-16 bg-blue-600 text-white">
+          <div className="container mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-4">最新情報をお届けします</h2>
+            <p className="mb-8">新しいコース、特別オファー、音楽業界のトレンドなど、役立つ情報をお届けします。</p>
+            <form className="flex flex-col md:flex-row justify-center items-center gap-4 max-w-md mx-auto">
+              <Input type="email" placeholder="メールアドレスを入力" className="w-full md:w-auto" />
+              <Button type="submit">登録する</Button>
+            </form>
           </div>
         </section>
       </main>
-
-      <footer className="bg-background border-t py-8 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h5 className="font-semibold mb-4">Soundryについて</h5>
-            <ul className="space-y-2">
-              <li><Link href="/company" className="text-muted-foreground hover:text-primary">会社概要</Link></li>
-              <li><Link href="/become-instructor" className="text-muted-foreground hover:text-primary">講師になる</Link></li>
-              <li><Link href="/careers" className="text-muted-foreground hover:text-primary">採用情報</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h5 className="font-semibold mb-4">サポート</h5>
-            <ul className="space-y-2">
-              <li><Link href="#" className="text-muted-foreground hover:text-primary">ヘルプセンター</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-primary">利用規約</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-primary">プライバシーポリシー</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h5 className="font-semibold mb-4">コミュニティ</h5>
-            <ul className="space-y-2">
-              <li><Link href="/blog" className="text-muted-foreground hover:text-primary">ブログ</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-primary">フォーラム</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-primary">イベント</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h5 className="font-semibold mb-4">ソーシャルメディア</h5>
-            <div className="flex space-x-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="mt-8 text-center text-muted-foreground">
-          <p>&copy; 2024 Soundry. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
